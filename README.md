@@ -1,6 +1,9 @@
 # RN-Tutorial_Reviews-App
 
 - Review mobile app built in React Native
+- A repo to follow along The Net Ninja's React Native tutorial on YouTube. Each commit will be a different video/lesson:
+
+[Playlist: Reviews App guide are videos 16-](https://www.youtube.com/playlist?list=PL4cUxeGkcC9ixPU-QkScoRBVxtPPzVjrQ)
 
 ## What I learned:
 
