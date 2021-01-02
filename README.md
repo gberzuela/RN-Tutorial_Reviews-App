@@ -16,3 +16,5 @@
 - Dymanically rendering an Image component
 - [Modal](https://reactnative.dev/docs/modal):
   - 'The Model component is a basic way to present content above an enclosing view
+- [Using Formik forms](https://formik.org/docs/guides/react-native)
+- [Using Yup to validate forms](https://www.npmjs.com/package/yup)
