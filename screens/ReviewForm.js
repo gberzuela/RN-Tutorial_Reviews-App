@@ -1,13 +1,33 @@
 import React from 'react';
 import { StyleSheet, View, TextInput, Button } from 'react-native';
+
 import { globalStyles } from '../styles/global';
+
 import { Formik } from 'formik';
+import * as yup from 'yup';
+
+// Validating with yup
+// title is type string that is required and min of 4 chars
+// body is type string that is required and min of 8 chars
+// rating is type string (because we just use it to get an image and it'll be a string in the TextInput anyway) that is required
+// test(name for test, feedback message if test fails, callback that validates)
+const reviewSchema = yup.object({
+	title: yup.string().required().min(4),
+	body: yup.string().required().min(8),
+	rating: yup
+		.string()
+		.required()
+		.test('is-num-1-5', 'Rating must be a number 1-5', (val) => {
+			return parseInt(val) < 6 && parseInt(val) > 0;
+		}),
+});
 
 const ReviewForm = ({ addReview }) => {
 	return (
 		<View style={globalStyles.container}>
 			<Formik
 				initialValues={{ title: '', body: '', rating: '' }}
+				validationSchema={reviewSchema}
 				onSubmit={(values, actions) => {
 					actions.resetForm(); // Clears input fields on Formik
 					addReview(values);
