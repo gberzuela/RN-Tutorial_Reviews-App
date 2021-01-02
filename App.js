@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { StyleSheet } from 'react-native';
 
-import HomeScreen from './screens/HomeScreen';
 import DrawerNavigator from './routes/Drawer';
 
 import * as Font from 'expo-font'; // Necessary
@@ -26,17 +25,6 @@ const App = () => {
 			onError={() => console.log('error')}
 		/>
 	);
-	// if (fontsLoaded) {
-	// 	return <MainNavigation />;
-	// } else {
-	// 	return (
-	// 		<AppLoading
-	// 			startAsync={getFonts}
-	// 			onFinish={() => setFontsLoaded(true)}
-	// 			onError={() => console.log('error')}
-	// 		/>
-	// 	);
-	// }
 };
 
 const styles = StyleSheet.create({

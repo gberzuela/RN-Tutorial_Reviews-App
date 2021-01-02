@@ -7,4 +7,8 @@
 
 ## What I learned:
 
--
+- How to use custom fonts and import them into our project asynchronously
+- Setting up react native navigation:
+  - Stacks && Drawers
+- Customizing a screen header
+- React Native workflow to set up and use a StyleSheet
