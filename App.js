@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { StyleSheet } from 'react-native';
 
 import HomeScreen from './screens/HomeScreen';
+import MainNavigation from './routes/HomeStack';
 
 import * as Font from 'expo-font'; // Necessary
 import AppLoading from 'expo-app-loading'; // Easy way for native to determine when the app is loaded
@@ -17,7 +18,7 @@ const App = () => {
 	const [fontsLoaded, setFontsLoaded] = useState(false);
 
 	return fontsLoaded ? (
-		<HomeScreen />
+		<MainNavigation />
 	) : (
 		<AppLoading
 			startAsync={getFonts}
@@ -26,7 +27,7 @@ const App = () => {
 		/>
 	);
 	// if (fontsLoaded) {
-	// 	return <HomeScreen />;
+	// 	return <MainNavigation />;
 	// } else {
 	// 	return (
 	// 		<AppLoading
