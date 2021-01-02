@@ -10,6 +10,7 @@ import {
 
 import { globalStyles } from '../styles/global';
 import Card from '../shared/Card';
+import ReviewForm from './ReviewForm';
 
 import { MaterialIcons } from '@expo/vector-icons';
 
@@ -41,7 +42,7 @@ const HomeScreen = ({ navigation }) => {
 						size={24}
 						onPress={() => setModalOpen(false)}
 					/>
-					<Text>Hello from the modal c:</Text>
+					<ReviewForm />
 				</View>
 			</Modal>
 
