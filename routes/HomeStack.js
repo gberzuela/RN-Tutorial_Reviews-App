@@ -21,18 +21,16 @@ const HomeStack = () => {
 			<Stack.Screen
 				name="Home Screen"
 				component={HomeScreen}
-				// options={{
-				// 	headerTitle: () => <Header />,
-				// 	headerTitleAlign: 'center',
-				// }}
 				options={({ navigation }) => {
 					return {
 						headerTitle: () => (
 							<Header navigation={navigation} title="GameZone" />
 						),
+						headerTitleAlign: 'center',
 					};
 				}}
 			/>
+
 			<Stack.Screen
 				name="Review Details Screen"
 				component={ReviewDetailsScreen}

@@ -12,15 +12,12 @@ const AboutStack = () => {
 			<Stack.Screen
 				name="About Screen"
 				component={AboutScreen}
-				// options={{
-				// 	headerTitle: () => <Header />,
-				// 	headerTitleAlign: 'center',
-				// }}
 				options={({ navigation }) => {
 					return {
 						headerTitle: () => (
 							<Header navigation={navigation} title="About GameZone" />
 						),
+						headerTitleAlign: 'center',
 					};
 				}}
 			/>
