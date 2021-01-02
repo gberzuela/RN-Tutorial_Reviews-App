@@ -5,6 +5,13 @@ export const globalStyles = StyleSheet.create({
 		flex: 1,
 		padding: 24,
 	},
+	errorText: {
+		color: 'crimson',
+		fontWeight: 'bold',
+		marginBottom: 10,
+		marginTop: 6,
+		textAlign: 'center',
+	},
 	input: {
 		borderWidth: 1,
 		borderColor: '#ddd',

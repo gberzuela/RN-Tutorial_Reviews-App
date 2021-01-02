@@ -1,15 +1,17 @@
 import React from 'react';
-import { StyleSheet, View, TextInput, Button } from 'react-native';
+import { View, Text, TextInput, Button } from 'react-native';
 
 import { globalStyles } from '../styles/global';
 
 import { Formik } from 'formik';
 import * as yup from 'yup';
 
-// Validating with yup
-// title is type string that is required and min of 4 chars
-// body is type string that is required and min of 8 chars
-// rating is type string (because we just use it to get an image and it'll be a string in the TextInput anyway) that is required
+/*
+	Validating with yup
+	title is type string that is required and min of 4 chars
+	body is type string that is required and min of 8 chars
+	rating is type string (because we just use it to get an image and it'll be a string in the TextInput anyway) that is required
+ */
 // test(name for test, feedback message if test fails, callback that validates)
 const reviewSchema = yup.object({
 	title: yup.string().required().min(4),
@@ -40,7 +42,11 @@ const ReviewForm = ({ addReview }) => {
 							placeholder="Review Title"
 							onChangeText={formikProps.handleChange('title')}
 							value={formikProps.values.title}
+							onBlur={formikProps.handleBlur('title')}
 						/>
+						<Text style={globalStyles.errorText}>
+							{formikProps.touched.title && formikProps.errors.title}
+						</Text>
 
 						<TextInput
 							multiline
@@ -48,7 +54,11 @@ const ReviewForm = ({ addReview }) => {
 							placeholder="Review Body"
 							onChangeText={formikProps.handleChange('body')}
 							value={formikProps.values.body}
+							onBlur={formikProps.handleBlur('body')}
 						/>
+						<Text style={globalStyles.errorText}>
+							{formikProps.touched.body && formikProps.errors.body}
+						</Text>
 
 						<TextInput
 							style={globalStyles.input}
@@ -56,7 +66,11 @@ const ReviewForm = ({ addReview }) => {
 							onChangeText={formikProps.handleChange('rating')}
 							value={formikProps.values.rating}
 							keyboardType="numeric"
+							onBlur={formikProps.handleBlur('rating')}
 						/>
+						<Text style={globalStyles.errorText}>
+							{formikProps.touched.rating && formikProps.errors.rating}
+						</Text>
 
 						<Button
 							title="Submit"
