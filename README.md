@@ -12,3 +12,4 @@
   - Stacks && Drawers
 - Customizing a screen header
 - React Native workflow to set up and use a StyleSheet
+- Dynamically outputting the children of a component instead of passing specific props
