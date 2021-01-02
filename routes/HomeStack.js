@@ -1,9 +1,9 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
-import { NavigationContainer } from '@react-navigation/native';
 
 import HomeScreen from '../screens/HomeScreen';
 import ReviewDetailsScreen from '../screens/ReviewDetailsScreen';
+import Header from '../shared/Header';
 
 const Stack = createStackNavigator();
 
@@ -21,7 +21,17 @@ const HomeStack = () => {
 			<Stack.Screen
 				name="Home Screen"
 				component={HomeScreen}
-				options={{ title: 'GameZone' }}
+				// options={{
+				// 	headerTitle: () => <Header />,
+				// 	headerTitleAlign: 'center',
+				// }}
+				options={({ navigation }) => {
+					return {
+						headerTitle: () => (
+							<Header navigation={navigation} title="GameZone" />
+						),
+					};
+				}}
 			/>
 			<Stack.Screen
 				name="Review Details Screen"
