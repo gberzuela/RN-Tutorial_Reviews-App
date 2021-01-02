@@ -2,6 +2,7 @@ import React from 'react';
 import { View, Text, TextInput, Button } from 'react-native';
 
 import { globalStyles } from '../styles/global';
+import FlatButton from '../shared/Button';
 
 import { Formik } from 'formik';
 import * as yup from 'yup';
@@ -72,11 +73,7 @@ const ReviewForm = ({ addReview }) => {
 							{formikProps.touched.rating && formikProps.errors.rating}
 						</Text>
 
-						<Button
-							title="Submit"
-							color="maroon"
-							onPress={formikProps.handleSubmit}
-						/>
+						<FlatButton text="submit" handlePress={formikProps.handleSubmit} />
 					</View>
 				)}
 			</Formik>
