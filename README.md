@@ -14,3 +14,5 @@
 - React Native workflow to set up and use a StyleSheet
 - Dynamically outputting the children of a component instead of passing specific props
 - Dymanically rendering an Image component
+- [Modal](https://reactnative.dev/docs/modal):
+  - 'The Model component is a basic way to present content above an enclosing view
