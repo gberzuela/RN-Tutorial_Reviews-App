@@ -3,13 +3,14 @@ import { StyleSheet, View, TextInput, Button } from 'react-native';
 import { globalStyles } from '../styles/global';
 import { Formik } from 'formik';
 
-const ReviewForm = () => {
+const ReviewForm = ({ addReview }) => {
 	return (
 		<View style={globalStyles.container}>
 			<Formik
 				initialValues={{ title: '', body: '', rating: '' }}
-				onSubmit={(values) => {
-					console.log(values);
+				onSubmit={(values, actions) => {
+					actions.resetForm(); // Clears input fields on Formik
+					addReview(values);
 				}}
 			>
 				{(formikProps) => (
@@ -38,7 +39,7 @@ const ReviewForm = () => {
 						/>
 
 						<Button
-							title="submit"
+							title="Submit"
 							color="maroon"
 							onPress={formikProps.handleSubmit}
 						/>

@@ -4,8 +4,10 @@ import {
 	View,
 	Text,
 	FlatList,
+	TouchableWithoutFeedback,
 	TouchableOpacity,
 	Modal,
+	Keyboard,
 } from 'react-native';
 
 import { globalStyles } from '../styles/global';
@@ -32,18 +34,28 @@ const HomeScreen = ({ navigation }) => {
 		},
 	]);
 
+	const addReview = (review) => {
+		// DB will handle generating a key for us
+		// This is for sake of the tutorial
+		review.key = Math.random().toString();
+		setReviews([review, ...reviews]);
+		setModalOpen(false);
+	};
+
 	return (
 		<View style={globalStyles.container}>
 			<Modal visible={modalOpen} animationType="slide">
-				<View style={styles.modalContent}>
-					<MaterialIcons
-						style={{ ...styles.modalToggle, ...styles.modalClose }}
-						name="close"
-						size={24}
-						onPress={() => setModalOpen(false)}
-					/>
-					<ReviewForm />
-				</View>
+				<TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+					<View style={styles.modalContent}>
+						<MaterialIcons
+							style={{ ...styles.modalToggle, ...styles.modalClose }}
+							name="close"
+							size={24}
+							onPress={() => setModalOpen(false)}
+						/>
+						<ReviewForm addReview={addReview} />
+					</View>
+				</TouchableWithoutFeedback>
 			</Modal>
 
 			<MaterialIcons
